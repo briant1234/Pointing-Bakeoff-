@@ -8,7 +8,7 @@ import processing.core.PApplet;
 //when in doubt, consult the Processsing reference: https://processing.org/reference/
 
 int margin = 200; //set the margin around the squares
-final int padding = 50; // padding between buttons and also their width/height
+final int padding = 35; // padding between buttons and also their width/height
 final int buttonSize = 40; // padding between buttons and also their width/height
 ArrayList<Integer> trials = new ArrayList<Integer>(); //contains the order of buttons that activate in the test
 int trialNum = 0; //the current trial number (indexes into trials array above)
@@ -18,8 +18,6 @@ int finishTime = 0; //records the time of the final click
 int hits = 0; //number of successful clicks
 int misses = 0; //number of missed clicks
 Robot robot; //initalized in setup 
-
-int buffer = padding/2;
 
 int numRepeats = 1; //sets the number of times each button repeats in the test
 
@@ -103,7 +101,7 @@ void keyPressed() // test to see if hit was in target!
   Rectangle bounds = getButtonLocation(trials.get(trialNum));
 
  //check to see if mouse cursor is inside button 
-  if ((mouseX > bounds.x-buffer && mouseX < bounds.x + bounds.width+buffer) && (mouseY > bounds.y-buffer && mouseY < bounds.y + bounds.height+buffer)) // test to see if hit was within bounds
+  if ((mouseX > bounds.x && mouseX < bounds.x + bounds.width) && (mouseY > bounds.y && mouseY < bounds.y + bounds.height)) // test to see if hit was within bounds
   {
     System.out.println("HIT! " + trialNum + " " + (millis() - startTime)); // success
     hits++; 
@@ -136,11 +134,11 @@ void drawButton(int i)
 
   if (trials.get(trialNum) == i) {// see if current button is the target
     noStroke();
-    fill(0, 255, 255); // if so, fill cyan
+    fill(10, 255, 20); // if so, fill cyan
   }
   else if ((nextTrialNum != trials.size()) && trials.get(nextTrialNum) == i) {
     fill(200);
-    strokeWeight(5);
+    strokeWeight(20);
     stroke(#FF0000);
   }
   else {
