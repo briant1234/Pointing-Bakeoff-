@@ -135,13 +135,13 @@ void drawButton(int i)
 
   if (trials.get(trialNum) == i) {// see if current button is the target
     //noStroke();
-    fill(#3D81EB);
+    fill(#428bff);
     strokeWeight(10);
-    stroke(#3D81EB);// if so, fill cyan
+    stroke(#428bff);// if so, fill cyan
   }
   else if ((nextTrialNum != trials.size()) && trials.get(nextTrialNum) == i) {
     noStroke();
-    fill(#F48D17);
+    fill(#bf6e11);
 ;
   }
   else {
