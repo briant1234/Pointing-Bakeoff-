@@ -145,7 +145,7 @@ void drawButton(int i)
   }
   else if ((nextTrialNum != trials.size()) && trials.get(nextTrialNum) == i) {
     noStroke();
-    fill(#e0aa08);
+    fill(#c9510c);
   }
   else {
     noStroke();
