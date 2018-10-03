@@ -146,22 +146,10 @@ void drawButton(int i)
   else if ((nextTrialNum != trials.size()) && trials.get(nextTrialNum) == i) {
     noStroke();
     fill(#e0aa08);
-    if ((mouseX > bounds.x-buffer && mouseX < bounds.x + bounds.width+buffer) && (mouseY > bounds.y-buffer && mouseY < bounds.y + bounds.height+buffer)) // test to see if hit was within bounds
-    {
-      strokeWeight(5);
-      stroke(#ff0000);
-      rect(bounds.x, bounds.y, bounds.width, bounds.height);
-    } 
   }
   else {
     noStroke();
     fill(220); // if not, fill gray
-    if ((mouseX > bounds.x-buffer && mouseX < bounds.x + bounds.width+buffer) && (mouseY > bounds.y-buffer && mouseY < bounds.y + bounds.height+buffer)) // test to see if hit was within bounds
-    {
-      strokeWeight(5);
-      stroke(#ff0000);
-      rect(bounds.x, bounds.y, bounds.width, bounds.height);
-    } 
   }
 
   rect(bounds.x, bounds.y, bounds.width, bounds.height); //draw button
