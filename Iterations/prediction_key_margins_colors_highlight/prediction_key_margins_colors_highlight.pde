@@ -20,7 +20,11 @@ int misses = 0; //number of missed clicks
 Robot robot; //initalized in setup 
 
 int buffer = padding/2;
-int numRepeats = 1; //sets the number of times each button repeats in the test
+int numRepeats = 20; //sets the number of times each button repeats in the test
+
+int pID = 1;
+int trial = 0;
+
 
 void setup()
 {
@@ -104,7 +108,8 @@ void keyPressed() // test to see if hit was in target!
  //check to see if mouse cursor is inside button 
   if ((mouseX > bounds.x-buffer && mouseX < bounds.x + bounds.width+buffer) && (mouseY > bounds.y-buffer && mouseY < bounds.y + bounds.height+buffer)) // test to see if hit was within bounds
   {
-    System.out.println("HIT! " + trialNum + " " + (millis() - startTime)); // success
+    System.out.println(trialNum + "," + pID + ", " + mouseX +", " + mouseY + ", "+(bounds.x+20) + ", " + (bounds.y+20) + ", " + "40" + (millis() - startTime) + 1);
+    //System.out.println("HIT! " + trialNum + " " + (millis() - startTime)); // success
     hits++; 
   } 
   else
