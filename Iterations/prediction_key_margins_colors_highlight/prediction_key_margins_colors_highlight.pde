@@ -108,16 +108,16 @@ void keyPressed() // test to see if hit was in target!
  //check to see if mouse cursor is inside button 
   if ((mouseX > bounds.x-buffer && mouseX < bounds.x + bounds.width+buffer) && (mouseY > bounds.y-buffer && mouseY < bounds.y + bounds.height+buffer)) // test to see if hit was within bounds
   {
-    System.out.println(trialNum + "," + pID + ", " + mouseX +", " + mouseY + ", "+(bounds.x+20) + ", " + (bounds.y+20) + ", " + "40" + (millis() - startTime) + 1);
+    System.out.println(trialNum + "," + pID + "," + mouseX +"," + mouseY + ","+(bounds.x+20) + "," + (bounds.y+20) + "," + "40" + "," + (millis() - startTime) + "," + 1);
     //System.out.println("HIT! " + trialNum + " " + (millis() - startTime)); // success
     hits++; 
   } 
   else
   {
-    System.out.println("MISSED! " + trialNum + " " + (millis() - startTime)); // fail
+    // System.out.println("MISSED! " + trialNum + " " + (millis() - startTime)); // fail
     misses++;
   }
-
+  startTime = millis();
   trialNum++; //Increment trial number
   nextTrialNum++;
 
